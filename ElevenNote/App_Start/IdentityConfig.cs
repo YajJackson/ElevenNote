@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using System.Web;
-using Microsoft.AspNet.Identity;
+﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using ElevenNote.Models;
+using System;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
-namespace ElevenNote
+namespace ElevenNote.Models
 {
     public class EmailService : IIdentityMessageService
     {
@@ -20,6 +15,11 @@ namespace ElevenNote
         {
             // Plug in your email service here to send an email.
             return Task.FromResult(0);
+        }
+
+        Task IIdentityMessageService.SendAsync(IdentityMessage message)
+        {
+            throw new NotImplementedException();
         }
     }
 
